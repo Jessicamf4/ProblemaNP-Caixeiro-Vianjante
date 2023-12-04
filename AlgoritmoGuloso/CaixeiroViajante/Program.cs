@@ -25,6 +25,8 @@
             MelhorRota melhorRota = new MelhorRota(distanceMatrix);
             melhorRota.CalculaMelhorRota();
 
+
+
         }
     }
 

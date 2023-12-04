@@ -46,7 +46,6 @@ namespace CaixeiroViajante
                 }
             }
 
-            //rota[cidades - 1] = rota[0]; 
 
             Console.WriteLine("Melhor Rota Encontrada:");
             for (int i = 0; i < cidades; i++)
@@ -55,8 +54,24 @@ namespace CaixeiroViajante
             }
             Console.WriteLine(rota[0]); // Volta para a primeira cidade para fechar o ciclo
 
+            double CalculaDistanciaTotal(int[] rota)
+            {
+                int cidades = rota.Length;
+                double distanciaTotal = 0;
 
+                for (int i = 0; i < cidades - 1; i++)
+                {
+                    distanciaTotal += DistanceMatrix[rota[i], rota[i + 1]];
+                }
+
+                // Adiciona a distância de retorno para a primeira cidade
+                distanciaTotal += DistanceMatrix[rota[cidades - 1], rota[0]];
+
+                return distanciaTotal;
+            }
         }
+
+
 
     }
     
